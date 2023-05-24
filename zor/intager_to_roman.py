@@ -6,7 +6,7 @@ def intToRoman(num):
         ('CD', 400),
         ('C', 100),
         ('XC', 90),
-        ('L', 50),
+        ('L', 50),         #roman harfleri ve karşılıklarını dictionary olarak tanımlıyoruz
         ('XL', 40),
         ('X', 10),
         ('IX', 9),
@@ -17,10 +17,10 @@ def intToRoman(num):
     
     roman = ''
     
-    for symbol, value in symbols:
-        while num >= value:
-            roman += symbol
-            num -= value
+    for symbol, value in symbols: 
+        while num >= value: #inputtan küçük en büyük sayıyı alıyoruz
+            roman += symbol #roman stringine karşılığını ekliyoruz
+            num -= value    #inputtan alınan sayıyı güncelliyoruz
     
     return roman
 
