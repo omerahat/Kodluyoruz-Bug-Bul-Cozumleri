@@ -1,16 +1,16 @@
 def permutations(string):
-    # Base case: If the string has only one character, return it as the only permutation
+    
     if len(string) == 1:
         return [string]
 
-    # Recursive case: Generate permutations by swapping each character with the first character
+    
     perms = []
     for i in range(len(string)):
         if i > 0 and string[i] == string[0]:
-            continue  # Skip duplicate characters to remove duplicate permutations
+            continue  
         chars = list(string)
-        chars[0], chars[i] = chars[i], chars[0]  # Swap characters
-        subperms = permutations(''.join(chars[1:]))  # Generate permutations for the remaining characters
+        chars[0], chars[i] = chars[i], chars[0]  
+        subperms = permutations(''.join(chars[1:]))  
         perms.extend([chars[0] + perm for perm in subperms])
 
     return perms
